@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="sunday">0</integer>
+    <integer name="monday">1</integer>
+    <integer name="tuesday">2</integer>
+    <integer name="wednesday">3</integer>
+    <integer name="thursday">4</integer>
+    <integer name="friday">5</integer>
+    <integer name="saturday">6</integer>
+</resources>

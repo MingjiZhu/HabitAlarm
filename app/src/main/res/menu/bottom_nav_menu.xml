@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_24"
+        android:checked="false"
+        android:checkable="false"
+        android:title="@string/settings" />
+
+    <item
+        android:id="@+id/navigation_adding"
+        android:icon="@drawable/ic_adding_24"
+        android:checked="false"
+        android:checkable="false"
+        android:title="@string/create" />
+
+</menu>

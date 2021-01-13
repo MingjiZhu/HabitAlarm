@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.DateSelectorFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.gm.habitalarm.ui.home.HabitViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:onClick="@{() -> viewModel.changeToPreviousDate()}"
+            android:src="@drawable/ic_arrow_up_48" />
+
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:background="@drawable/rounded_corner"
+            android:gravity="left|center_vertical"
+            android:textAlignment="gravity"
+            android:text="@{viewModel.date.toString()}"
+            android:textColor="@color/colorDarkBlack"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:text="2020-11-1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:onClick="@{() -> viewModel.changeToNextDate()}"
+            android:src="@drawable/ic_arrow_down_48" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</layout>

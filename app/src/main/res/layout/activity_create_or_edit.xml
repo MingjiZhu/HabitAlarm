@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.databinding.adapters.TimePickerBindingAdapter" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.gm.habitalarm.ui.createOrEdit.CreateOrEditViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="NAME YOUR HABIT" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Workout, Read a book, etc."
+                    android:text="@={viewModel.habitName}"
+                    tools:text="name of habit" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ON WHICH DAYS?" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:backgroundTint="@{viewModel.days[@integer/sunday] ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onDayClick(@integer/sunday)}"
+                        android:text="@string/sunday" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:backgroundTint="@{viewModel.days[@integer/monday] ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onDayClick(@integer/monday)}"
+                        android:text="@string/monday" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:backgroundTint="@{viewModel.days[@integer/tuesday] ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onDayClick(@integer/tuesday)}"
+                        android:text="@string/tuesday" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:backgroundTint="@{viewModel.days[@integer/wednesday] ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onDayClick(@integer/wednesday)}"
+                        android:text="@string/wednesday" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:backgroundTint="@{viewModel.days[@integer/thursday] ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onDayClick(@integer/thursday)}"
+                        android:text="@string/thursday" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:backgroundTint="@{viewModel.days[@integer/friday] ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onDayClick(@integer/friday)}"
+                        android:text="@string/friday" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:backgroundTint="@{viewModel.days[@integer/saturday] ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onDayClick(@integer/saturday)}"
+                        android:text="@string/saturday" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@{viewModel.areAllDaysOn() ? @color/colorHotPink : @color/colorDarkGray }"
+                    android:onClick="@{() -> viewModel.onAllDaysClick()}"
+                    android:text="EVERY DAY" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="NOTIFICATION" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@{viewModel.isNotificationOn() ? @color/colorHotPink : @color/colorDarkGray }"
+                        android:onClick="@{() -> viewModel.onNotificationClick(true)}"
+                        android:text="ON" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@{viewModel.isNotificationOn() ? @color/colorDarkGray : @color/colorHotPink }"
+                        android:onClick="@{() -> viewModel.onNotificationClick(false)}"
+                        android:text="OFF" />
+                </LinearLayout>
+
+                <TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:timePickerMode="spinner"
+                    android:visibility="@{viewModel.isNotificationOn() ? View.VISIBLE : View.GONE}"
+                    android:hour="@={viewModel.hour}"
+                    android:minute="@={viewModel.minute}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewModel.onSaveClick()}"
+                    android:text="Save" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
+

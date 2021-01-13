@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Habit Alarm</string>
+    <string name="settings">SETTINGS</string>
+    <string name="create">CREATE</string>
+    <string name="edit">EDIT</string>
+    <string name="delete">DELETE</string>
+    <string name="cancel">CANCEL</string>
+
+    <string name="settings_header_appearance">App Settings</string>
+    <string name="dark_theme_title">Dark theme</string>
+    <string name="dark_theme_key_value">dark_theme</string>
+    <string name="sound_title">Sound</string>
+    <string name="sound_key_value">sound</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- Notification -->
+    <string name="notification_content">Don\'t forget to checkout your habit today!</string>
+    <string name="notification_channel_description">Habit Alarm notification</string>
+
+    <string name="sunday">sun</string>
+    <string name="monday">mon</string>
+    <string name="tuesday">tue</string>
+    <string name="wednesday">wed</string>
+    <string name="thursday">thu</string>
+    <string name="friday">fri</string>
+    <string name="saturday">sat</string>
+
+    <string name="dialog_delete_title">DELETE</string>
+    <string name="dialog_delete_message">The habit will be deleted permanently.</string>
+
+</resources>

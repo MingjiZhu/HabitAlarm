@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.DateSelectorFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.gm.habitalarm.ui.home.HabitViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:onClick="@{() -> viewModel.changeToPreviousDate()}"
+            android:src="@drawable/ic_arrow_left_48" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center"
+            android:text="@{viewModel.date.toString()}"
+            android:textColor="@color/colorDarkBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="2020-11-1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:onClick="@{() -> viewModel.changeToNextDate()}"
+            android:src="@drawable/ic_arrow_right_48" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</layout>
